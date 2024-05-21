@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Hangman
@@ -135,6 +136,132 @@ namespace Hangman
                 }
                 //Info about user chances
                 Console.WriteLine("\nPozostała ilość szans: " + lifesCounter);
+
+
+                DrawHangman(lifesCounter);
+
+                static void DrawHangman(int attempts)
+                {
+                    string[] hangmanStages = new string[]
+                    {
+//0
+            @"
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+      |
+=========",
+//1
+            @"
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+      |
+=========",
+//2
+            @"
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+      |
+=========",
+//3
+            @"
+  +---+
+  |   |
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========",
+//4
+            @"
+  +---+
+  |   |
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========",
+//5
+            @"
+  +---+
+  |   |
+  |   |
+  O   |
+      |
+      |
+      |
+=========",
+//6
+            @"
+  +---+
+  |   |  
+  |   |
+      |     
+      |
+      |
+      |
+=========",
+//7
+            @"
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+      |
+=========",
+//8
+            @"
+  +---+
+      |
+      |
+      |
+      |
+      |
+      |
+=========",
+//9
+            @"
+      |
+      |
+      |
+      |
+      |
+      |
+=========",
+//10 
+            @" 
+      
+      
+
+      
+      
+      
+========="
+                    };
+
+                    Console.WriteLine(hangmanStages[attempts]);
+                }
+
+
+
+
+
+
             }
             //Each game ends when user:
             //- won
